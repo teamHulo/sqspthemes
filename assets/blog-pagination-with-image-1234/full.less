@@ -1,1 +1,199 @@
+:root {
+	//image pagination size
+  --image-width: 130px;
+  --image-height: 90px;
+  
+  //blog title properties
+  --font-weight: 600; 
+  --font-size: 18px;
+  --line-height: 1;
+  --font-family: "Inter", sans-serif;
+  --text-color: #000;
+  --text-offset: -20px;
+  
+  //Date properties
+  --date-font-weight: 600; 
+  --date-font-size: 14px;
+  --date-line-height: 1;
+  --date-font-family: "Inter", sans-serif;
+  --date-text-color: #7b7878;
+}
+
+.blog-img-pagination {
+  .item-pagination-link {
+    max-width: none !important;
+    
+    @media screen and(min-width: 768px) {
+        max-width: 50% !important;
+    }
+  }
+  
+  section.item-pagination {
+    display: flex !important;
+    flex-direction: column !important; 
+    gap: 2rem;
+	padding: 0 2vw 6vw !important;
+     
+    @media screen and (min-width: 768px) {
+      flex-direction: row !important;
+    }
+  }
+  
+  .pagination-title-wrapper {
+    transition: transform 300ms ease-in-out;
+       
+  }
+  
+  .item-pagination-link--prev {
+    .item-pagination-icon {
+      padding-right: 15px !important;
+    }
+    
+    .pagination-title-wrapper {
+      position: relative;
+      
+      &:before {
+        content: var(--date-prev);
+      }
+    }
+  }
+  
+  .item-pagination-link--next {
+      .item-pagination-icon {
+      padding-left: 15px !important;
+    }
+    
+  	  .pagination-title-wrapper {
+      position: relative;
+      
+      &:before {
+        content: var(--date-next);
+      }
+    }
+  }
+  
+  .pagination-title-wrapper {
+      
+    &:before {
+        font-weight: var(--date-font-weight); 
+       font-size: var(--date-font-size);
+        font-family: var(--date-font-family);
+        color: var(--date-text-color);
+    }
+  }
+  
+  .item-pagination-link--next {
+    display: flex;
+  
+   &:before {
+    order: 2;
+  }
+  
+  .item-pagination-icon {
+        order: 3;
+  }
+  
+  .pagination-title-wrapper {
+    order: 1;
+    margin-right: var(--text-offset);
+    z-index: 1;
+  }
+}
+
+.item-pagination-link--prev {
+  display: flex;
+  
+  &:before {
+    order: 2;
+  }
+  
+  .item-pagination-icon {
+        order: 1;
+  }
+  
+  .pagination-title-wrapper {
+    order: 3;
+    margin-left: var(--text-offset);
+    z-index: 1;
+  }
+}
+
+.item-pagination-title {
+	font-weight: var(--font-weight) !important;
+  	font-size: var(--font-size) !important;
+  	line-height: var(--line-height) !important;
+  	font-family: var( --font-family) !important;
+  color: var(--text-color) !important;
+}
+
+.item-pagination-link--prev{
+	position: relative;
+    display: flex;
+    align-items: center;
+   
+  &:before {
+    content: '';
+    background: var(--blog-pagination-prev) no-repeat;
+      width: var(--image-width);
+      height: var(--image-height);
+      background-size: cover;
+      background-position: center;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      position: relative;
+      flex-shrink: 0;
+  }
+  
+    &:hover {
+    .pagination-title-wrapper {
+        transform: translateX(~'calc(var(--text-offset) * -1.5)');
+  }
+}
+}
+
+.item-pagination-link--next {
+  	position: relative;
+    display: flex-reverse;
+    align-items: center;
+  
+  &:before {
+    content: '';
+    background: var(--blog-pagination-next) no-repeat;
+      width: var(--image-width);
+      height: var(--image-height);
+      background-size: cover;
+      background-position: center;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      position: relative;
+      flex-shrink: 0;
+  }
+  
+  &:hover {
+    .pagination-title-wrapper {
+     transform: translateX(~'calc(var(--text-offset) * 1.5)');
+  }
+}
+  
+  }
+
+  .blog-item-wrapper {
+    position: relative;
+  
+    &:before {
+      content: '';
+      background: var(--project-bg) no-repeat;
+      height: 70vh;
+      background-size: cover;
+      background-position: center;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      position: relative;
+       flex-shrink: 0;
+    }
+  }
+}
 
