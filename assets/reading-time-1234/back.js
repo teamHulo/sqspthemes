@@ -2,12 +2,20 @@
 
     const values = {
     path: '/blog-2-1',
+    addToItem: true
 };
 </script>
 
+<style>
+  :root{
+  --arrow: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 7L15 12L10 17" stroke="%236d6464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+
+</style>
 
 <script>
-       (function(path){
+  
+       (function(path, itemVisible){
          let collectionId;
          const arrOfHtml = [];
          
@@ -63,16 +71,21 @@
                     const data = buildContent(dataList.items);
                     collectionId = dataList.collection.id;
                     findBlogSections(collectionId, data);
+                    
+              if(itemVisible) {
+                 renderTimeInItems(collectionId, data);
+              }
                 });
     
     function buildContent(items) {
 
     	items.forEach((item) => {
-            
+         
           	const url = item.fullUrl;
         	const body = item.body;
           	const container = document.createElement('div');
           	container.innerHTML = body;
+            const id = item.id;
           	
             let string = '';
           	const elements = container.querySelectorAll('p, span, h1, h2, h3, h4');
@@ -83,7 +96,7 @@
           
           const readingTime = calculateReadingTime(string);
           
-          arrOfHtml.push({url, readingTime});
+          arrOfHtml.push({id, url, readingTime});
         })
    
              return arrOfHtml;
@@ -118,7 +131,7 @@
             items.forEach((item) => {
                 const link = item.querySelector('a');
             	const href = link.getAttribute('href');
-                //const content = item.querySelector('.summary-content');
+            
                 
                 values.forEach((el) => {
                   if(el.url === href) {
@@ -134,8 +147,7 @@
             items.forEach((item) => {
                 const link = item.querySelector('a');
             	const href = link.getAttribute('href');
-                //const content = item.querySelector('.summary-content');
-                
+               
                 values.forEach((el) => {
                   if(el.url === href) {
                   	item.setAttribute('data-reading-time', `${el.readingTime} min read`);
@@ -144,19 +156,24 @@
             })
          }
          
-		function renderTime(selectors) {
-        	selectors.forEach((selector) => {
-            	
-            })
-        }
+	    function renderTimeInItems(collection, data) {
+        
+
+          data.forEach((el) => {
+          	if(document.body.getAttribute('id').includes(el.id)) {
+                document.body.classList.add('blog-reading-time-item');
+                const article = document.body.querySelector('.blog-item-inner-wrapper');
+                article.setAttribute('data-reading-time', `${el.readingTime} min read`);
+            }
+          })
          
+        }
          
          function createValuesList(list) {
          	return list;
-         }
+         } 
          
     
-})(values.path)
+})(values.path, values.addToItem)
     
-  
 </script>
