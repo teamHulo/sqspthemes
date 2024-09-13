@@ -1,7 +1,7 @@
 
 .blog-reading-time .summary-item, .blog-reading-time article {
     position: relative;
-   padding-bottom: 15px;
+   box-sizing: border-box;
     
     &:before {
       content: '';
@@ -16,7 +16,7 @@
       background-position: center;
       background-size: contain;
       border-radius: 50%;
-      box-sizing: border-box;
+     
     }
     
     &:after {
@@ -24,9 +24,8 @@
       display: block;
       color: #6d6464;
       font-size: 14px;
-      margin-left: 25px;
+      margin: 15px 0 15px 30px;
       line-height: 20px;
-      margin-top: 15px;
     }
   } 
 
