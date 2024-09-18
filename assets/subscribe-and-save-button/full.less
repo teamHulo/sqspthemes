@@ -1,0 +1,104 @@
+.subscribtion-item:has(.ProductItem-Subs-Otp) {
+    .product-price {
+      margin: 0;
+    }
+    
+    .message-block {
+      padding: 3px !Important;
+    }
+    
+    .message-text{
+      text-transform: uppercase;
+      color: red;
+      border: 1px solid;
+      margin: 0;
+      padding: 5px;
+      font-size: 12px;
+
+    }
+    
+    .ProductItem-product-price:not(.changing-price){
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      
+      &.text-decoration {
+        .product-price {
+          text-decoration: line-through;
+        }
+      }
+    }
+    
+    .product-quantity-input {
+      &.invisible {
+        display: none !important;
+      } 
+    }
+    
+    .changing-price {
+      display: block;
+      
+      &.invisible {
+        display: none;
+      }
+      
+      .product-price {
+        color: red;
+      }
+    }
+    
+      .subscription-product-price, .subscription-frequency-select-wrapper, .subscription-option .radio-wrapper {
+        display: none;
+      } 
+    
+    .subscription-option {
+      display: block;
+    }
+      
+      .ProductItem-product-price {
+        display: inline-block;
+      }
+      
+      .changing-price {
+        margin-right: 20px;
+      }
+
+    .subscription-value-group {
+      appearance: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-clip: content-box;
+      background-color: #fff;
+      border: 1px solid #9b9b9b;
+      
+      &:after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #000;
+        opacity: 0;
+      }
+      
+      &:checked {
+        background-color: #d6d6d6;
+    	border: none;
+        
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+    
+    .inputs-radio-wrap {
+      display: flex;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+  }
