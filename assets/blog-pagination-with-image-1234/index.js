@@ -72,7 +72,7 @@ function trimTitles() {
       const blogItemImgSrc = document.head.querySelector("[property='og:image']").content; 
       const blogId = document.body.getAttribute('id');
       root.style.setProperty('--project-bg', `url(${blogItemImgSrc})`);
-      document.querySelector('.blog-img-pagination .h-entry').style.opacity = '1';
+      //document.querySelector('.blog-img-pagination .h-entry').style.opacity = '1';
       trimTitles();
 	    
       list.forEach((el, i) => {
