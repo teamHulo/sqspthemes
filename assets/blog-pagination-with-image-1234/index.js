@@ -20,6 +20,8 @@ function trimTitles() {
 	const title =  blog.querySelector('.item-pagination-title ');
 	const innerTitle = (title.innerHTML).slice(0, 3) + "...";
 	title.innerHTML = innerTitle;
+
+console.log('innerTitle', innerTitle)	
 }
   
   function buildList(data) {
