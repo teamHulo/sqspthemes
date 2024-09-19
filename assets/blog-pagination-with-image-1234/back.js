@@ -76,7 +76,6 @@
       
      
       list.forEach((el, i) => {
-	      console.log('el', el);
 	      
         if(blogId.includes(el.id)){
            let urlPrev = el.urlPrev;
