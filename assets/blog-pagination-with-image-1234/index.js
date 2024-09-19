@@ -1,9 +1,8 @@
 (function(path, isDisplayDate, titleLength){
-
 	
         let collectionId;
     
-  		fetch(document.location.origin + path +'?format=json-pretty')
+  	fetch(document.location.origin + path +'?format=json-pretty')
 
             .then(response => response.json())
             .then(data => { 
