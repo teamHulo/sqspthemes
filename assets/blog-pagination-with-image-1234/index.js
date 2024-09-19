@@ -1,4 +1,5 @@
 (function(path, isDisplayDate){
+	console.log('BLOG IMAGE PAG')
         let collectionId;
     
   		fetch(document.location.origin + path +'?format=json-pretty')
