@@ -11,7 +11,7 @@
         		const blogList = buildList(data);
 
           		setPaginationImg(blogList);
-		        trimTitles();
+		      
 		    
         })
 
@@ -73,7 +73,8 @@ console.log('innerTitle', innerTitle)
       const blogItemImgSrc = document.head.querySelector("[property='og:image']").content; 
       const blogId = document.body.getAttribute('id');
       root.style.setProperty('--project-bg', `url(${blogItemImgSrc})`);
-
+      
+      trimTitles();
 	    
       list.forEach((el, i) => {
 	     
