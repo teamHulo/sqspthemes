@@ -7,21 +7,20 @@
             .then(response => response.json())
             .then(data => { 
           
-   				collectionId = data.collection.id;
+   		       collectionId = data.collection.id;
         		const blogList = buildList(data);
-
           		setPaginationImg(blogList);
-		      
-		    
+		
         })
+	
 
 function trimTitles() {
 	const blog = document.querySelector('.blog-img-pagination');
-	const title =  blog.querySelector('.item-pagination-title ');
-	const innerTitle = (title.innerHTML).slice(0, titleLength) + "...";
-	title.innerHTML = innerTitle;
-
-console.log('innerTitle', innerTitle)	
+	const titles =  blog.querySelectorAll('.item-pagination-title ');
+	titles.forEach((title) => {
+	  const innerTitle = (title.innerHTML).slice(0, titleLength) + "...";
+	  title.innerHTML = innerTitle;	
+	})
 }
   
   function buildList(data) {
