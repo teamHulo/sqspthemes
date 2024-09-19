@@ -1,4 +1,6 @@
 (function(path, isDisplayDate, titleLength){
+	document.querySelector('.blog-img-pagination .h-entry').style.paddingTop = '70vh';
+        document.querySelector('.blog-img-pagination .h-entry').style.opacity = '0%';
 	
         let collectionId;
     
@@ -69,11 +71,10 @@ function trimTitles() {
        const root = document.documentElement;
        
     if (blogItem){
-      document.querySelector('.h-entry').style.paddingTop = '70vh';
       const blogItemImgSrc = document.head.querySelector("[property='og:image']").content; 
       const blogId = document.body.getAttribute('id');
       root.style.setProperty('--project-bg', `url(${blogItemImgSrc})`);
-      
+      document.querySelector('.blog-img-pagination .h-entry').style.opacity = '100%';
       trimTitles();
 	    
       list.forEach((el, i) => {
