@@ -63,7 +63,7 @@ function trimTitles() {
     
   
       function setPaginationImg (list) {
-       
+       const blog = document.querySelector('.blog-img-pagination');
        document.querySelector(`.collection-${collectionId}.view-item`).classList.add('blog-img-pagination')
        const blogItem =  document.querySelector(`.collection-${collectionId}.view-item .blog-item-wrapper`);
        const root = document.documentElement;
@@ -74,6 +74,7 @@ function trimTitles() {
       root.style.setProperty('--project-bg', `url(${blogItemImgSrc})`);
       //document.querySelector('.blog-img-pagination .h-entry').style.opacity = '1';
       trimTitles();
+	    blog.style.opacity = '1';
 	    
       list.forEach((el, i) => {
 	     
