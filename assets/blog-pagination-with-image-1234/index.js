@@ -69,6 +69,7 @@ function trimTitles() {
        const root = document.documentElement;
        
     if (blogItem){
+      document.querySelector('.h-entry').style.paddingTop = '70vh';
       const blogItemImgSrc = document.head.querySelector("[property='og:image']").content; 
       const blogId = document.body.getAttribute('id');
       root.style.setProperty('--project-bg', `url(${blogItemImgSrc})`);
