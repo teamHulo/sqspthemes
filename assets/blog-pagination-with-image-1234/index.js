@@ -1,5 +1,5 @@
 (function(path, isDisplayDate){
-	console.log('BLOG IMAGE PAG')
+	
         let collectionId;
     
   		fetch(document.location.origin + path +'?format=json-pretty')
@@ -10,8 +10,10 @@
    				collectionId = data.collection.id;
         		const blogList = buildList(data);
 
-          		setPaginationImg(blogList);                                     
+          		setPaginationImg(blogList);
+		    
         })
+
   
   function buildList(data) {
 	const blogList = [];
@@ -59,13 +61,14 @@
        const root = document.documentElement;
        
     if (blogItem){
-  	  const blogItemImgSrc = document.head.querySelector("[property='og:image']").content; 
+      const blogItemImgSrc = document.head.querySelector("[property='og:image']").content; 
       const blogId = document.body.getAttribute('id');
       root.style.setProperty('--project-bg', `url(${blogItemImgSrc})`);
-      
-     
+      const title =  blogItem.querySelector('.item-pagination-title ');
+      console.log('title', title)
+	    
       list.forEach((el, i) => {
-	      console.log('el', el)
+	     
         if(blogId.includes(el.id)){
            let urlPrev = el.urlPrev;
            let urlNext = el.urlNext;
