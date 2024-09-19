@@ -1,6 +1,5 @@
 (function(path, isDisplayDate, titleLength){
-	document.querySelector('.blog-img-pagination .h-entry').style.paddingTop = '70vh';
-        document.querySelector('.blog-img-pagination .h-entry').style.opacity = '0';
+
 	
         let collectionId;
     
