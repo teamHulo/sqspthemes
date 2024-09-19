@@ -1,4 +1,4 @@
-(function(path, isDisplayDate){
+(function(path, isDisplayDate, titleLength){
 	
         let collectionId;
     
@@ -18,7 +18,7 @@
 function trimTitles() {
 	const blog = document.querySelector('.blog-img-pagination');
 	const title =  blog.querySelector('.item-pagination-title ');
-	const innerTitle = (title.innerHTML).slice(0, 3) + "...";
+	const innerTitle = (title.innerHTML).slice(0, titleLength) + "...";
 	title.innerHTML = innerTitle;
 
 console.log('innerTitle', innerTitle)	
@@ -96,4 +96,4 @@ console.log('innerTitle', innerTitle)
       	})
     	}
       }   
-  })(values.path, values.isDisplayDate)
+  })(values.path, values.isDisplayDate, values.blogTitleLength)
