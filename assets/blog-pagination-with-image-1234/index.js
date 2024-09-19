@@ -11,9 +11,15 @@
         		const blogList = buildList(data);
 
           		setPaginationImg(blogList);
+		        trimTitles();
 		    
         })
 
+function trimTitles() {
+	const blog = document.querySelector('.blog-img-pagination');
+	const title =  blog.querySelector('.item-pagination-title ');
+	console.log('title:', title);
+}
   
   function buildList(data) {
 	const blogList = [];
@@ -64,8 +70,7 @@
       const blogItemImgSrc = document.head.querySelector("[property='og:image']").content; 
       const blogId = document.body.getAttribute('id');
       root.style.setProperty('--project-bg', `url(${blogItemImgSrc})`);
-      const title =  blogItem.querySelector('.item-pagination-title ');
-      console.log('title', title)
+
 	    
       list.forEach((el, i) => {
 	     
